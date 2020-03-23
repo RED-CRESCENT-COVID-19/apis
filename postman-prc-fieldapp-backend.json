@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "7d237219-bc8c-4e71-9c8b-1e070cb652c9",
+		"name": "CoronaFieldApp-StagingServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getCode",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone_number",
+							"value": "+923174701072",
+							"type": "text"
+						},
+						{
+							"key": "auth_key",
+							"value": "FR18_SH9PP4NG_N3W",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://prc.optymyzetech.com/API/Surveyor_API/getCode",
+					"protocol": "http",
+					"host": [
+						"prc",
+						"optymyzetech",
+						"com"
+					],
+					"path": [
+						"API",
+						"Surveyor_API",
+						"getCode"
+					]
+				},
+				"description": "this API will be called when surveyor puts in his phone number to sign in to the application"
+			},
+			"response": []
+		},
+		{
+			"name": "validateCode",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "auth_key",
+							"value": "FR18_SH9PP4NG_N3W",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "+923174701072",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "478568",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://prc.optymyzetech.com/API/Surveyor_API/validateCode",
+					"protocol": "http",
+					"host": [
+						"prc",
+						"optymyzetech",
+						"com"
+					],
+					"path": [
+						"API",
+						"Surveyor_API",
+						"validateCode"
+					]
+				},
+				"description": "Use this API to validate the code for the surveyor to login to the application"
+			},
+			"response": []
+		},
+		{
+			"name": "createHouseHold",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "auth_key",
+							"value": "FR18_SH9PP4NG_N3W",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "House 23, Street 22, Sector G-8/2, Islamabad",
+							"type": "text"
+						},
+						{
+							"key": "survey_allowed",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "latitude",
+							"value": "10.833306",
+							"type": "text"
+						},
+						{
+							"key": "longitude",
+							"value": "19.102439",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://prc.optymyzetech.com/API/Household_API/create",
+					"protocol": "http",
+					"host": [
+						"prc",
+						"optymyzetech",
+						"com"
+					],
+					"path": [
+						"API",
+						"Household_API",
+						"create"
+					]
+				},
+				"description": "Use this API to create a house hold object"
+			},
+			"response": []
+		},
+		{
+			"name": "createSurvey",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "auth_key",
+							"value": "FR18_SH9PP4NG_N3W",
+							"type": "text"
+						},
+						{
+							"key": "household_id",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "surveyor_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "cnic",
+							"value": "4211111254521",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "+923147854125",
+							"type": "text"
+						},
+						{
+							"key": "temperature",
+							"value": "98.7",
+							"type": "text"
+						},
+						{
+							"key": "fever",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "cough",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "sputum",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "fatigue",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "sob",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "headache",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "congestion",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "meralgia",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "hemoptysis",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "conjuctivitis",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "notes",
+							"value": "All is well OR any other custom note ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://prc.optymyzetech.com/API/Survey_API/create",
+					"protocol": "http",
+					"host": [
+						"prc",
+						"optymyzetech",
+						"com"
+					],
+					"path": [
+						"API",
+						"Survey_API",
+						"create"
+					]
+				},
+				"description": "Send all the data of a person and his symptoms as post params to this API. The API will create the person as well as the survey itself. \n"
+			},
+			"response": []
+		},
+		{
+			"name": "Summary for the Surveyor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "auth_key",
+							"value": "FR18_SH9PP4NG_N3W",
+							"type": "text"
+						},
+						{
+							"key": "surveyor_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://prc.optymyzetech.com/API/Survey_API/getSummary",
+					"protocol": "http",
+					"host": [
+						"prc",
+						"optymyzetech",
+						"com"
+					],
+					"path": [
+						"API",
+						"Survey_API",
+						"getSummary"
+					]
+				},
+				"description": "This API is called on the screen titled \"Health Scan\". This API displays the summary of the total households and the surveys the the surveyor has done.\n"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
